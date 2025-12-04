@@ -1,20 +1,20 @@
 const db = require('../db/database');
 
-// Buscar todos os produtos
+// Buscar todos os produtos - [Luísa Deschamps]
 function getProducts(callback) {
     db.all('SELECT * FROM products', [], (err, rows) => {
         callback(err, rows);
     });
 }
 
-// Buscar produto por ID
+// Buscar produto por ID - [Luísa Deschamps]
 function findProductById(id, callback) {
     db.get('SELECT * FROM products WHERE id = ?', [id], (err, row) => {
         callback(err, row);
     });
 }
 
-// Criar produto
+// Criar produto - [Luísa Deschamps]
 function createProduct(product, callback) {
     const { name, description, price, stock } = product;
     db.run('INSERT INTO products (name, description, price, stock) VALUES (?, ?, ?, ?)', 
@@ -28,7 +28,7 @@ function createProduct(product, callback) {
     );
 }
 
-// Atualizar produto
+// Atualizar produto - [Luísa Deschamps]
 function updateProduct(id, product, callback) {
     const { name, description, price, stock } = product;
     db.run('UPDATE products SET name = ?, description = ?, price = ?, stock = ? WHERE id = ?', 
@@ -39,7 +39,7 @@ function updateProduct(id, product, callback) {
     );
 }
 
-// Deletar produto
+// Deletar produto - [Luísa Deschamps]
 function deleteProduct(id, callback) {
     db.run('DELETE FROM products WHERE id = ?', [id], (err) => {
         callback(err);
