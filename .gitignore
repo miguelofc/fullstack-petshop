@@ -1,0 +1,38 @@
+# Compiled output
+dist/
+tmp/
+out-tsc/
+bazel-out/
+build/
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Angular
+.angular/
+
+# Environment
+.env
+*.env
+
+# Logs
+*.log
+
+# Coverage
+coverage/
+
+# OS files
+.DS_Store
+
+# Temp files
+*.tmp
+*.temp
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
